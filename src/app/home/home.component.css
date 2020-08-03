@@ -1,13 +1,13 @@
-.page-container {
-  height: 100vh;
+.container {
+  height: 100%;
 }
 
 .header-container {
-  height: 10%;
-  background-color: red;
+  border-color: red;
+  border-style: solid;
 }
 
 .main-container {
-  height: 90%;
-  background-color: black;
+  border-color: red;
+  border-style: solid;
 }
