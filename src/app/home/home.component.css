@@ -1,0 +1,13 @@
+.page-container {
+  height: 100vh;
+}
+
+.header-container {
+  height: 10%;
+  background-color: red;
+}
+
+.main-container {
+  height: 90%;
+  background-color: black;
+}
