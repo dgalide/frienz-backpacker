@@ -1,4 +1,66 @@
-<div class="base-container">
-  <router-outlet></router-outlet>
-</div>
+<!-- Flex Container -->
+<div fxLayout="column" class="container">
 
+  <!-- Header -->
+  <div fxFlex="30%" fxLayoutAlign="center center" class="header-container">
+    <img style="height: 70%;" src="assets/images/frienz-logo.gif"/>
+  </div>
+
+  <!-- Main -->
+  <div fxLayout="column" fxFlex="65%" class="main-container">
+
+    <!-- Menu Container -->
+    <div fxFlex="10%"  fxLayout="row" fxLayoutAlign="center center">
+      <div class="menu-item">
+        <button [routerLink]="['/home']" mat-button color="accent">Home</button>
+      </div>
+
+      <div class="menu-item">
+        <button mat-button color="accent"
+        [matMenuTriggerFor]="aucklandBackpack"
+        #menuTrigger="matMenuTrigger"
+        (mouseleave)="mouseLeaveTrigger.next()"
+        (mouseover)="menuTrigger.openMenu()">Auckland Backpacker</button>
+        <mat-menu [hasBackdrop]="false" style="z-index:1050" #aucklandBackpack="matMenu" yPosition="below">
+          <span (mouseleave)="menuTrigger.closeMenu()" (mouseenter)="mouseEnterMenu.next()">
+            <button mat-menu-item>Accommodation</button>
+            <button mat-menu-item>Facilities</button>
+            <button mat-menu-item>Location</button>
+            <button mat-menu-item>Happenings</button>
+          </span>
+        </mat-menu>
+      </div>
+
+      <div class="menu-item">
+        <button [routerLink]="['/about']" mat-button color="accent">About Us</button>
+      </div>
+
+      <div class="menu-item">
+        <button [routerLink]="['/contact']" mat-button color="accent">Contact Us</button>
+      </div>
+
+      <!-- Booking Platform -->
+      <div class="menu-item">
+        <button mat-button color="accent">
+          <a target="_blank" href="https://secure.staah.com/common-cgi/properties/b2c/Booknow.pl?action=showpage&MotelId=2778&Ln=en&unk=1438">Bookings</a>
+        </button>
+      </div>
+    </div>
+
+    <div fxFlex="90%">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer-container" fxFlex="5%">
+    <div class="footer">
+      <div class="copyright">
+        <p>Copyright <fa-icon [icon]="copyright"></fa-icon> 2020 Frienz</p>
+      </div>
+
+      <div class="footer-links">
+      </div>
+    </div>
+  </div>
+</div>
