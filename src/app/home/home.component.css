@@ -10,4 +10,21 @@
 .main-container {
   border-color: red;
   border-style: solid;
+  height: 100%;
+  width: 100%;
+}
+
+.footer-container {
+  border-color: red;
+  border-style: solid;
+}
+
+.footer {
+  background-color: grey;
+  margin: 5px;
+  border-radius: 4px;
+}
+
+.menu-item {
+  margin: 10px;
 }
